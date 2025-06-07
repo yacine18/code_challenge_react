@@ -20,7 +20,7 @@ const SkipCard = ({ skip }: { skip: SkipItem }) => {
             >       <div className="relative">
                     <Image
                         className="w-full rounded-t-lg object-cover"
-                        src="src/assets/skip.jpg"
+                        src="/skip.jpg"
                         alt="skip"
                         loading="lazy"
                     />
