@@ -1,10 +1,11 @@
+import SkipItems from "./pages/SkipItems"
 
 function App() {
 
   return (
-    <div>
-      Hello world!
-    </div>
+    <>
+      <SkipItems />
+    </>
   )
 }
 
