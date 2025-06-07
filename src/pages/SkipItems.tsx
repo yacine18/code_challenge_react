@@ -4,6 +4,7 @@ import SkipCard from "../components/SkipCard"
 import axios from "axios";
 import Loader from "../components/Loader";
 import Stepper from "../components/Stepper";
+import type { SkipItem } from "../interfaces/SkipItem";
 
 const SkipItems = () => {
 
@@ -32,7 +33,7 @@ const SkipItems = () => {
                 isLoading && <Loader />
             }
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-2 mt-8">
-                {items.map((item: any) => (
+                {items.map((item: SkipItem) => (
                     <SkipCard key={item.id} item={item} />
                 ))}
             </div>

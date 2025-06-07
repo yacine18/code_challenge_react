@@ -43,7 +43,7 @@ const Stepper = () => {
                 </div>
 
                 <div className="flex flex-col items-center z-10">
-                    <div className="w-10 h-10 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold">4</div>
+                    <div className="w-10 h-10 rounded-full cursor-not-allowed bg-gray-300 text-gray-600 flex items-center justify-center font-bold">4</div>
                     <span className="mt-2 text-md font-medium text-gray-600 flex items-center gap-1">
                         <MdOutlinePrivacyTip size={19} />
                         Permit Check
@@ -51,7 +51,7 @@ const Stepper = () => {
                 </div>
 
                 <div className="flex flex-col items-center z-10">
-                    <div className="w-10 h-10 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold">5</div>
+                    <div className="w-10 h-10 rounded-full bg-gray-300 cursor-not-allowed text-gray-600 flex items-center justify-center font-bold">5</div>
                     <span className="mt-2 text-md font-medium text-gray-600 flex items-center gap-1">
                         <MdDateRange size={19} />
                         Choose Date
@@ -59,7 +59,7 @@ const Stepper = () => {
                 </div>
 
                 <div className="flex flex-col items-center z-10">
-                    <div className="w-10 h-10 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold">6</div>
+                    <div className="w-10 h-10 rounded-full bg-gray-300 cursor-not-allowed text-gray-600 flex items-center justify-center font-bold">6</div>
                     <span className="mt-2 text-md font-medium text-gray-600 flex items-center gap-1">
                         <MdOutlinePayment size={19} />
                         Payment

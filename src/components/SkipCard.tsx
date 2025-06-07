@@ -1,12 +1,13 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import Image from "./Image"
 import { FaArrowRight } from "react-icons/fa6";
 import Badge from "./Badge";
 import { IoWarningOutline } from "react-icons/io5";
+import type { SkipItem } from "../interfaces/SkipItem";
 
 
 
-const SkipCard = ({ item }) => {
+const SkipCard = ({item}:SkipItem) => {
     const [isSelected, setIsSelected] = useState(false)
     console.log(item)
     return (
