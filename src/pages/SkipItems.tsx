@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Cart from "../components/Cart"
 import SkipCard from "../components/SkipCard"
 import axios from "axios";
 import Loader from "../components/Loader";
@@ -14,7 +13,7 @@ const SkipItems = () => {
     useEffect(() => {
         const fetchItems = async () => {
             try {
-                const response = await axios.get('https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft'); // Replace with your API endpoint
+                const response = await axios.get("https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft");
                 setItems(response.data);
                 setIsLoading(false);
             } catch (error) {
@@ -25,22 +24,26 @@ const SkipItems = () => {
     }, []);
 
     return (
-        <div className="text-center mt-5 mb-24">
+        <div className="w-full px-4 sm:px-6 lg:px-10 text-center mt-5">
             <Stepper />
-            <h2 className="text-4xl font-bold text-gray-700">Choose Your Skip Size</h2>
-            <p className="mt-5 text-xl text-gray-600">Select the skip size that best suits your needs</p>
-            {
-                isLoading && <Loader />
-            }
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-2 mt-8">
-                {items.map((item: SkipItem) => (
-                    <SkipCard key={item.id} item={item} />
+
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-700">
+                Choose Your Skip Size
+            </h2>
+
+            <p className="mt-3 sm:mt-5 text-lg sm:text-xl text-gray-600">
+                Select the skip size that best suits your needs
+            </p>
+
+            {isLoading && <Loader />}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-8 mb-44 md:px-15 lg:px-15 sm:px-0">
+                {items.map((skip:SkipItem) => (
+                    <SkipCard key={skip.id} skip={skip} />
                 ))}
             </div>
-            <Cart />
-            <div className="bottom-0 fixed">
-            </div>
         </div>
+
+
     )
 }
 
