@@ -9,6 +9,7 @@ This project is a complete redesign of the **"Choose Your Skip Size"** page for 
 ### UI/UX
 - Clean, minimal light theme replacing the old dark style
 - Larger, more prominent skip images
+- Redesign stepper component
 - Clearer hierarchy for skip size, price, and selection state
 - Consistent styling with Tailwind utility classes
 - Fully responsive grid using Tailwind
