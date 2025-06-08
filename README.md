@@ -1,54 +1,34 @@
-# React + TypeScript + Vite
+# Choose Your Skip Size – Page Redesign
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a complete redesign of the **"Choose Your Skip Size"** page for [We Want Waste](https://wewantwaste.co.uk). It is built using **React with TypeScript** and **TailwindCSS** for styling, with a simple modernized UI, responsive layout, and preserved core functionality.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Improvements Summary
 
-## Expanding the ESLint configuration
+### UI/UX
+- Clean, minimal light theme replacing the old dark style
+- Larger, more prominent skip images
+- Clearer hierarchy for skip size, price, and selection state
+- Consistent styling with Tailwind utility classes
+- Fully responsive grid using Tailwind
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Functionality
+- Dynamic data fetching from API (https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft)
+- Maintains selection logic and visual feedback
+- “Back” and “Continue” navigation preserved
+- Displays selected skip and pricing details at the bottom
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **React With TypeScript**
+- **TailwindCSS**
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Run project
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- Clone the Github Repo by running: `git clone https://github.com/yacine18/code_challenge_react.git`
+- Install dependencies by running: `npm install`
+- Run project: `npm run dev`
+visit `http://localhost:5173/`

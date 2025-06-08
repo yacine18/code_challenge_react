@@ -30,14 +30,14 @@ const Stepper = () => {
                     >
                         <div
                             className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold 
-            ${active ? "bg-orange-600 text-white" : "bg-gray-300 text-gray-600"} 
+            ${active ? "bg-orange-600 text-white cursor-pointer" : "bg-gray-300 text-gray-600 cursor-not-allowed"} 
             transition-colors duration-200`}
                         >
                             {step}
                         </div>
                         <div
                             className={`mt-2 text-xs md:text-sm font-medium flex flex-col items-center
-            ${active ? "text-orange-600" : "text-gray-500"} 
+            ${active ? "text-orange-600 cursor-pointer" : "text-gray-500 cursor-not-allowed"} 
             transition-colors duration-200`}
                         >
                             <span className="text-lg">{icon}</span>

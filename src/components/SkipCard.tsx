@@ -1,4 +1,3 @@
-import { useState } from "react"
 import Image from "./Image"
 import { FaArrowRight } from "react-icons/fa6";
 import Badge from "./Badge";
@@ -6,15 +5,24 @@ import { IoWarningOutline } from "react-icons/io5";
 import Cart from "./Cart";
 import type { SkipItem } from "../interfaces/SkipItem";
 
+const SkipCard = ({ skip, isSelected, onSelect }: {
+    skip: SkipItem, isSelected: boolean;
+    onSelect: (skip: SkipItem | null) => void;
+}) => {
 
+    const handleClick = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        if (isSelected) {
+            onSelect(null); // unselect if already selected
+        } else {
+            onSelect(skip); // select new skip
+        }
+    };
 
-const SkipCard = ({ skip }: { skip: SkipItem }) => {
-    const [isSelected, setIsSelected] = useState(false)
-    console.log(skip)
     return (
         <>
             <div
-                onClick={() => setIsSelected(!isSelected)}
+                onClick={handleClick}
                 className={`cursor-pointer w-full max-w-sm mx-auto mt-5 mb-20 border rounded-lg shadow-lg transition-colors duration-300 ${isSelected ? "border-orange-600" : "border-gray-200"
                     }`}
             >       <div className="relative">
@@ -48,10 +56,7 @@ const SkipCard = ({ skip }: { skip: SkipItem }) => {
                             £{skip.price_before_vat}
                         </span>
                         <button
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                setIsSelected(!isSelected);
-                            }}
+                            onClick={handleClick}
                             className={`flex items-center cursor-pointer gap-2 px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${isSelected
                                 ? "bg-orange-600 hover:bg-orange-700"
                                 : "bg-gray-700 hover:bg-gray-800"
@@ -68,8 +73,11 @@ const SkipCard = ({ skip }: { skip: SkipItem }) => {
                     </div>
                 </div>
             </div>
-            <div className="bottom-0 fixed">
-                <Cart />
+            <div className="fixed z-50">
+                {
+                    isSelected && <Cart selectedSkip={skip} />
+                }
+
             </div>
         </>
 
